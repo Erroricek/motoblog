@@ -1,0 +1,51 @@
+    /*@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');*/
+    
+    
+    @media only screen and (max-width: 875px) {
+
+        .jumbotron {
+          width: 100%;
+        }
+    }
+
+
+    body{ 
+        background-color: rgb(218, 218, 218);
+    }
+
+
+    div {
+        
+    }
+
+    .nopadding {
+        padding: 0 !important;
+        margin: 0 !important;
+     }
+
+     .navbarcolorforme {
+         background-color: yellowgreen
+     }
+
+
+     .nomargin{
+         padding: 0 !important;
+         margin: 0 !important;
+     }
+
+     .profile-icon {
+        height: 60px;
+        width: 60px;
+        margin: 0
+        padding
+     }
+
+     .inliner-width {
+        float: left;
+        /*max-width: auto; // set this value*/
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+      }
+      .navbar-nav .dropdown-menu {
+        float: left !important;
+    }
