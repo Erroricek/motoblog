@@ -1,0 +1,125 @@
+    /*@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');*/
+    
+
+    /* Custom Scrollbar */   
+    /* width */
+    ::-webkit-scrollbar {
+    width: 10px;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+/*  background: #f1f1f1;    */
+    background: white;
+    }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+    background: #888; 
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+    background: #242424;
+/*  background: #555; */
+    }
+
+    .customgreen{
+        background-color:#006600;
+
+    }
+
+    .nav-item{
+        padding: 0 10px;
+
+    }
+    
+    .card-text{
+        overflow-y: scroll;
+        max-height: 100px;
+    }
+
+
+    @media only screen and (max-width: 875px) {
+
+        .jumbotron {
+          width: 100%;
+        }
+    }
+
+    html{
+        min-height: 100%;
+        height: 100%;
+    }
+    
+
+    body{ 
+
+        background-color: rgb(218, 218, 218);
+        min-height: 100%;
+        height: 100%;
+    }
+
+    .shadow-box
+    {
+        box-shadow: 4px 3px 18px 6px #0000007d; 
+    }
+    .nopadding {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .navbarcolorforme {
+         background-color: yellowgreen
+    }
+
+    .profile-icon{
+        height: 60px;
+        width: 60px;
+        margin: 0;
+        padding: 0
+    }
+
+    .inliner-width{
+        float: left;
+        /*max-width: auto; // set this value*/
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .navbar-nav .dropdown-menu{
+        float: left !important;
+    }
+
+    .dropdown-toggle::after{
+        border-top: none;
+    }
+
+    .checked{
+        color: orange;
+    }
+
+    .btn{
+        margin: 10px;
+        padding: 10px 30px;
+        width: auto;
+        
+        display: inline-block;
+    }
+
+
+    /* hvezdicky */
+    .vyplnena:hover{
+        color:gold;
+        cursor: pointer;
+    }
+
+    .vyplnena{
+        color:black;
+    }
+
+
+    img {
+        object-fit: cover;
+        height: 250px;
+        width: 100%;
+    }
+
+ 
