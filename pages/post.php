@@ -69,8 +69,6 @@ if($post!=NULL){
                     }
                     
                     
-                    
-
                     $jmenoObrazku = $obrazky[$i]; ?>
                     
 
