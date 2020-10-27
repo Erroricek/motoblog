@@ -4,12 +4,12 @@
 $post = isset($_GET['post']) ? $_GET['post'] : NULL;
 
 ?>
-<div class="embed-responsive embed-responsive-16by9">
+<!-- <div class="embed-responsive embed-responsive-16by9">
     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qN3OueBm9F4" allowfullscreen></iframe>
 </div>
 <div class="embed-responsive embed-responsive-16by9">
     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qN3OueBm9F4" allowfullscreen></iframe>
-</div> 
+</div>  -->
 <?php
 
 if($post!=NULL){
