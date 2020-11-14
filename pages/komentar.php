@@ -32,12 +32,12 @@
                             </div>
                             <div class="col-lg-9 col-9 user-comment bg-light rounded pb-1 mt-2">
                             <div class="row">
-                                <div class="col-lg-7 col-6 border-bottom pr-0">
+                               <div class="col-lg-7 col-6 border-bottom pr-0">
                                   <p class="w-100 p-2 m-0">Lorem ipsum dolor sit amet.</p>
-                                </div>
-                                <div class="col-lg-5 col-6 border-bottom">
+                               </div>
+                               <div class="col-lg-5 col-6 border-bottom">
                                   <p class="w-100 p-2 m-0"><span class="float-right"><i class="fa fa-clock-o mr-1" aria-hidden="true"></i>01 : 00</span></p>
-                                </div>
+                               </div>
                             </div> 
                                 <div class="user-comment-desc p-1 pl-2">
                                     <p class="m-0 mr-2"><span><i class="fa fa-thumbs-up mr-1" aria-hidden="true"></i></span></i>510</p>                      
@@ -59,13 +59,13 @@
                             </div>
                             <div class="col-lg-9 col-9 user-comment bg-light rounded pb-1 mt-2">
                             <div class="row">
-                                <div class="col-lg-7 col-6 border-bottom pr-0">
+                               <div class="col-lg-7 col-6 border-bottom pr-0">
                                   <p class="w-100 p-2 m-0">Lorem ipsum dolor sit amet.</p>
-                                </div>
-                                <div class="col-lg-5 col-6 border-bottom">
+                               </div>
+                               <div class="col-lg-5 col-6 border-bottom">
                                   <p class="w-100 p-2 m-0"><span class="float-right"><i class="fa fa-clock-o mr-1" aria-hidden="true"></i>01 : 00</span></p>
-                                </div>
-                              </div> 
+                               </div>
+                             </div> 
                                 <div class="user-comment-desc p-1 pl-2">
                                     <p class="m-0 mr-2"><span><i class="fa fa-thumbs-up mr-1" aria-hidden="true"></i></span></i>120</p>                      
                                     <p class="m-0 mr-2"><span><i class="fa fa-thumbs-down mr-1" aria-hidden="true"></i></span></i>960</p>                      
@@ -84,17 +84,17 @@
                   </div>
                   <div class="col-lg-10 col-9 user-comment bg-light rounded pb-1">
                   <div class="row">
-                          <div class="col-lg-8 col-6 border-bottom pr-0">
+                         <div class="col-lg-8 col-6 border-bottom pr-0">
                             <p class="w-100 p-2 m-0">Lorem ipsum dolor sit amet.</p>
-                          </div>
-                          <div class="col-lg-4 col-6 border-bottom">
+                         </div>
+                         <div class="col-lg-4 col-6 border-bottom">
                             <p class="w-100 p-2 m-0"><span class="float-right"><i class="fa fa-clock-o mr-1" aria-hidden="true"></i>01 : 00</span></p>
-                          </div>
-                        </div> 
+                         </div>
+                       </div> 
                       <div class="user-comment-desc p-1 pl-2">
                           <p class="m-0 mr-2"><span><i class="fa fa-thumbs-up mr-1" aria-hidden="true"></i></span></i>109</p>                      
                           <p class="m-0 mr-2"><span><i class="fa fa-thumbs-down mr-1" aria-hidden="true"></i></span></i>512</p>                      
-                      </div >    
+                      </div>    
                   </div>
                 </div>
             </li>
