@@ -1,4 +1,5 @@
 <?php
+
 /* $currentMonth = Date(); */
 var_dump((int)Date("m"));
 echo"<br>";

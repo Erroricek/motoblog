@@ -28,10 +28,10 @@ $menu = [
 
 ]; //asociativni pole pro menu
 
-if (!$user) {
+if (!$User) {
     $menu[] = ["type" => "page", "text" => "registrace", "target" => "register"];
 }
-if ($user && $user->isAdmin()) {
+if ($User && $User->isAdmin()) {
     $menu[] = ["type" => "page", "text" => "Přidání příspěvku", "target" => "add"];
 }
 
@@ -72,9 +72,9 @@ if ($user && $user->isAdmin()) {
                     <a class="profile_picture nav-link dropdown-toggle m-0 p-0" href="#" id="navbarDropdownProfileLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <?php
                         
-                            if($user && $img=$user->getProfileImage()){
+                            if($User && $img=$User->getProfileImage()){
                                 echo("<img src='galerie/user_profile_picture/$img' class='img-fluid' alt='Profilová fotka'>");
-                            }else if ($user) {
+                            }else if ($User) {
                                 echo('<i class="fas fa-user fa-3x"></i>');
 
                             }else{
@@ -89,7 +89,7 @@ if ($user && $user->isAdmin()) {
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfileLink"> 
                         <?php
                         
-                        if ($user) { ?>
+                        if ($User) { ?>
                             <a class="btn btn-info d-block w-auto py-2 my-2" href="index.php?page=edit_profile">Účet</a>
                             <hr>
                             <form class="d-block w-auto" action="index.php?page=login" method="post">

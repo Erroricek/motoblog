@@ -1,17 +1,17 @@
 <?php
 if(isset($_SESSION["loged"]) && $_SESSION["loged"]==true && isset($_SESSION["id"]))
 {
-    $user = new User((int)$_SESSION["id"]);
+    $User = new User((int)$_SESSION["id"]);
     
-    if($user->id == NULL){
+    if($User->id == NULL){
         unset($_SESSION['id']);
         unset($_SESSION['loged']);
-        $user = FALSE;
+        $User = FALSE;
     }
 
 
 } else {
-    $user = null;
+    $User = null;
     $isLoged = FALSE;
     $isAdmin = FALSE;
 }

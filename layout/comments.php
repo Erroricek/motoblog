@@ -34,7 +34,7 @@ function createCommentRow($data, $showReplyButton)
 {
     global $conn;
     $replyHTML = '<div class="reply"><a href="javascript:void(0)" data-commentID="' . $data['id'] . '" onclick="reply(this)">REPLY</a></div>';
-    $data['comment'] = preg_replace('#<script(.*?)>(.*?)</script>#is', 'Jsi hnusnej Hacker.', $data['comment']);
+    $data['comment'] = preg_replace('#<script(.*?)>(.*?)</script>#is', 'Jsem hnusnej hacker a chci hacknout tuto stránku.', $data['comment']);
     $response = '
             <div class="comment">
                 <div class="user">' . $data['name'] . ' <span class="time">' . $data['createdOn'] . '</span>' . (isset($_SESSION['id'])?canIEditOrDeleteMyCommentQuestionMark((int)$data['id'], $_SESSION['id'], $showReplyButton):'') . '</div>
@@ -142,7 +142,7 @@ $numComments = $sqlNumComments->num_rows;
             <div class="col-md-12">
                 <textarea class="form-control" id="mainComment" placeholder="Add Public Comment" cols="30" rows="2"></textarea><br>
                 <?php 
-                if ($user){
+                if ($User){
                     echo('<button style="float:right" class="btn-primary btn" onclick="isReply = false;" id="addComment">Přidej komentář</button>');
                 }else{
                     echo('<a href="/index.php?page=register" style="float:right" class="btn-danger btn">Registruj se</a>');

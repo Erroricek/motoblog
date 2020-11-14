@@ -16,7 +16,7 @@
     $sql = "INSERT INTO ratings (user, post, rating) VALUES ($user,$post,$raiting)";
     DB::query($sql);
     //$conn->query($sql);
-    Log::add("Uživatel " . $user->login . " Přidal hodnocení.");
+    Log::add("Uživatel " . $User->login . " Přidal hodnocení.");
     header("location:../index.php?page=post&post=$post");
 
 ?>

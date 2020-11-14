@@ -25,18 +25,12 @@ if (!isset($_SESSION["success"])) {
 
 function display_errors($errors){
     foreach ((array)$errors as $error) { ?>
-        <?php
-        
-        
-        
-        ?>
         <div class="alert alert-danger alert-dismissible fade show nice-shadow my-3" role="alert">
             <?php echo($error) ?>  
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-
     <?php
     }
 }
@@ -62,7 +56,7 @@ function sqlcheck($sql, $comment = ""){
         <?php include "layout/header.php"; ?>
     </head>
 
-    <body>
+    <body onload="startTime()">
         <!—action navbar—>
         
             <?php
@@ -165,8 +159,10 @@ function sqlcheck($sql, $comment = ""){
                                     
                                 }  //konec switche
 
-                            if (isset($user) && $user->isAdmin()) {
-                                display_errors(["You are logged as admin! Be carefull, please."]);
+                            if (isset($_SESSION['id'])) {
+                                if($User && $User->isAdmin()){
+                                    display_errors(["You are logged as admin! Be carefull, please."]);
+                                }
                             }
                         
                         ?>

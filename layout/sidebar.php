@@ -7,7 +7,7 @@
         m = checkTime(m);
         s = checkTime(s);
         document.getElementById('clock').innerHTML =
-            "Já jsem speciální stránka. Vím, že právě je: " + h + ":" + m + ":" + s;
+            "právě je: " + h + ":" + m + ":" + s;
         var t = setTimeout(startTime, 500);
     }
 
@@ -46,70 +46,75 @@ function getTodayHoliday()
 
 <div class="col-md-3 col-lg-3 col-xl-2  bg-dark text-white">
     <div class="row">
-
-        <div class="col-12 p-2 text-center ">
-            <h5 class="text-center">Dnes je:
-                <br>
-                <?php
-                function datum()
-                {
-                    $aj = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
-                    $cz = array("ledna", "února", "března", "dubna", "května", "června", "července", "srpna", "září", "října", "listopadu", "prosince");
-                    $datum = str_replace($aj, $cz, date("j.F Y"));
-                    return $datum;
-                }
-                echo (datum());
-                ?>
-            </h5>
-        </div>
-
-
-
-
-        <!-- rozdělovaci carecka -->
-        <div class="col-12">
-            <hr class="style7">
-        </div>
-
-
-        <!-- svatek -->
-        <div class="col-12 p-2 text-center ">
-            <h5>Svátek má:</h5>
-            <?php echo (getTodayHoliday()) ?>
-        </div>
-
-        <!-- rozdělovaci carecka -->
-        <div class="col-12">
-            <hr class="style7">
-        </div>
-
-
-        <body onload="startTime()">
-            <div id ="clock"></div>
-
-        </body>
-        <?php
-
-
-        if ($user) {
-        ?>
-            <!-- něco -->
-            <div class="col-12 p-3 text-center">
-                <h3>Přihlášený pod jménem:</h3>
-                <p><?php
-
-                    //echo($_SESSION['login']);
-                    echo ($user->login);
-
-                    ?></p>
+        <div class="col-12 text-center ">
+            <!-- dnes je -->
+            <div class=" p-2 ">
+                <h5 class="text-center">Dnes je:
+                    <br>
+                    <?php
+                    function datum()
+                    {
+                        $aj = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+                        $cz = array("ledna", "února", "března", "dubna", "května", "června", "července", "srpna", "září", "října", "listopadu", "prosince");
+                        $datum = str_replace($aj, $cz, date("j.F Y"));
+                        return $datum;
+                    }
+                    echo (datum());
+                    ?>
+                </h5>
             </div>
-        <?php
-        } else {
-            $outline = true;
-            include 'login_form.php';
-        }
-        ?>
 
 
+
+
+            <!-- rozdělovaci carecka -->
+            <div class="col-12">
+                <hr class="style7">
+            </div>
+            
+            <!-- hodiny -->
+            <div class="col-12 p-2"> 
+                <p id ="clock"></p>
+            </div>
+            
+            
+            <!-- rozdělovaci carecka -->
+            <div class="col-12">
+                <hr class="style7">
+            </div>
+            
+            <!-- svatek -->
+            <div class="col-12 p-2 text-center ">
+                <h5>Svátek má:</h5>
+                <?php echo (getTodayHoliday()) ?>
+            </div>
+            
+            <!-- rozdělovaci carecka -->
+            <div class="col-12">
+                <hr class="style7">
+            </div>
+            <?php
+            
+            
+            if ($User) {
+            ?>
+                <!-- něco -->
+                <div class="col-12 p-2 text-center">
+                    <p>Přihlášený pod jménem:</p>
+                    <h3><?php
+
+                        //echo($_SESSION['login']);
+                        echo ($User->login);
+
+                        ?></h3>
+                </div>
+            <?php
+            } else {
+                $outline = true;
+                include 'login_form.php';
+            }
+            ?>
+
+        </div>
     </div>
 </div>

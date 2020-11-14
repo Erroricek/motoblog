@@ -3,12 +3,12 @@
 if(isset($_POST['submit'])){
     $login = $_POST['login'];
     $password = $_POST['password']; 
-    $user = User::login($login, $password);
-    if($user){
+    $User = User::login($login, $password);
+    if($User){
         
-        Log::add("přihlásil se uživatel ID: " . $user->id . " jméno, příjmení: " .  $user->firstName . " " . $user->lastName .  " login: " . $user->login);
+        Log::add("přihlásil se uživatel ID: " . $User->id . " jméno, příjmení: " .  $User->firstName . " " . $User->lastName .  " login: " . $User->login);
         $_SESSION["loged"] = TRUE;
-        $_SESSION["id"] = $user->id;
+        $_SESSION["id"] = $User->id;
         $_SESSION["success"][] = "Úspěšně přihlášen";
         
         header("Refresh:0; url=index.php?page=posts");
@@ -41,7 +41,7 @@ if(isset($_POST['submit'])){
 
 }elseif(isset($_POST['logout'])){
     session_destroy();
-    $user = null;
+    $User = null;
     $isLoged = FALSE;
     $isAdmin = FALSE;
     header("Refresh:0; url=index.php");
@@ -49,7 +49,7 @@ if(isset($_POST['submit'])){
 }
 
 
-if(!$user){ 
+if(!$User){ 
 
 ?>
 

@@ -20,7 +20,7 @@ class User{
 
 	public function isAdmin()
 	{
-		if((int)($this->role) == 1){//'admin'
+		if((int)$this->role == 1){//'admin'
 			return TRUE;
 		}else{
 			return FALSE;
@@ -29,13 +29,13 @@ class User{
 
 
 	private function loginById($id){
-		$row = DB::query("SELECT * FROM users WHERE id=$id")[0];
+		$result = DB::query("SELECT * FROM users WHERE id=$id")[0];
 		$this->id = $id;
-		$this->login = $row['login'];
-		$this->firstName = $row['firstName'];
-		$this->lastName = $row['lastName'];
-		$this->email = $row['email'];
-		$this->role = $row['role'];
+		$this->login = $result['login'];
+		$this->firstName = $result['firstName'];
+		$this->lastName = $result['lastName'];
+		$this->email = $result['email'];
+		$this->role = $result['role'];
 		return $this;
 	}
 
@@ -83,12 +83,12 @@ class User{
 			if($result){
 				$login = $input['login'];
 				$password = $input['password']; 
-				$user = User::login($login, $password);
+				$User = User::login($login, $password);
 
 				$last_id = DB::$conn->insert_id;
 				Log::add("uspesne registrovan. login: " . $input["login"] . " Jmeno: " . $input["firstName"] . " Prijmeni: " . $input["lastName"]);
 				$_SESSION["loged"] = TRUE;
-				$_SESSION["id"] = $user->id;
+				$_SESSION["id"] = $User->id;
 				$_SESSION["success"][] = "Úspěšně přihlášen";
 				return TRUE;
 			}
@@ -153,9 +153,9 @@ class User{
 		
 		if ($result) {
 			$last_id = (int)$result[0]["id"];
-			$user = new User($last_id);
+			$User = new User($last_id);
 			
-			return $user;
+			return $User;
 		}else{
 			return FALSE;
 		}

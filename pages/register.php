@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
         "password" => $password
     ];
     if (empty($errorMessage)) {
-        $user = User::register($data);
+        $User = User::register($data);
         header("Refresh:1; url=index.php?page=posts");
         $_SESSION["success"][] = "Úspěšně registrován a  přihlášen.";
 

@@ -1,7 +1,7 @@
 <?php
-if($user->getProfileImage())
+if($User->getProfileImage())
 {
-    $img = "galerie/user_profile_picture/" . $user->getProfileImage();
+    $img = "galerie/user_profile_picture/" . $User->getProfileImage();
     
 }else {
     $img = "galerie/static_pictures/insert-here.jpg";
@@ -15,7 +15,7 @@ if (isset($_POST['reset'])) {
 
 if (isset($_POST['updateFotky']))
 {
-    $result = $user->updateFotky($_POST);
+    $result = $User->updateFotky($_POST);
     if(is_array($result)){
         echo("NEuspesne ulozena fotka");
         $errorMessage = $result;
@@ -32,7 +32,7 @@ if (isset($_POST['updateFotky']))
 
 if (isset($_POST['update'])) 
 {
-    $result = $user->update($_POST);
+    $result = $User->update($_POST);
     if(is_array($result)){
         $errorMessage = [];
         $errorMessage[] = "NEuspesne ulozene zmeny";
@@ -45,14 +45,8 @@ if (isset($_POST['update']))
 }
 
 
-if ($user) {
-    //name login email password
-    //name login email password password_check
+if ($User) {
 ?>
-
-
-
-
 
     <div class="container">
         <h1>Edit Profilu</h1>
@@ -62,9 +56,7 @@ if ($user) {
             <div class="col-md-3">
                 <div class="text-center">
                     
-
                     <img src='<?=$img?>' class='img-fluid' alt='avatar'>
-
                     
                     <h6>Vložit profilovou fotku...</h6>
                     <form action="index.php?page=edit_profile" method="post" enctype="multipart/form-data">
@@ -104,21 +96,21 @@ if ($user) {
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Jméno:</label>
                         <div class="col-lg-8">
-                            <input class="form-control" name="firstName" type="text" value="<?= $user->firstName ?>">
+                            <input class="form-control" name="firstName" type="text" value="<?= $User->firstName ?>">
                         </div>
                     </div>
                     <!-- lastName -->
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Příjmení:</label>
                         <div class="col-lg-8">
-                            <input class="form-control" name="lastName" type="text" value="<?= $user->lastName ?>">
+                            <input class="form-control" name="lastName" type="text" value="<?= $User->lastName ?>">
                         </div>
                     </div>
                     <!-- email -->
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Email:</label>
                         <div class="col-lg-8">
-                            <input class="form-control" name="email" type="text" value="<?= $user->email ?>">
+                            <input class="form-control" name="email" type="text" value="<?= $User->email ?>">
                         </div>
                     </div>
                     <!-- heslo -->
