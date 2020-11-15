@@ -104,6 +104,7 @@ function getTodayHoliday()
                     <h3><?php
 
                         //echo($_SESSION['login']);
+                        //var_dump($User);
                         echo ($User->login);
 
                         ?></h3>

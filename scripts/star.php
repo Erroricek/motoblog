@@ -17,7 +17,7 @@
             $jesteNehodnotil = true;
         }
 
-        if($User =! NULL && $jesteNehodnotil && isset($_SESSION["id"])){
+        if($User != NULL && $jesteNehodnotil && isset($_SESSION["id"])){
             //var_dump($jesteNehodnotil);
             if ($User && $jesteNehodnotil) {/*  */
                 /* for ($i=1; $i <= 5; $i++) { 
