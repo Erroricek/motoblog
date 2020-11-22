@@ -161,7 +161,7 @@ function sqlcheck($sql, $comment = ""){
 
                             if (isset($_SESSION['id'])) {
                                 if($User && $User->isAdmin()){
-                                    display_errors(["You are logged as admin! Be carefull, please."]);
+                                    display_errors(["Jsi přihlášen jako ADMIN! Buď opatrný!"]);
                                 }
                             }
                         

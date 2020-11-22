@@ -33,7 +33,7 @@ function canIEditOrDeleteMyCommentQuestionMark($commentID, $userID, bool $isRepl
 function createCommentRow($data, $showReplyButton)
 {
     global $conn;
-    $replyHTML = '<div class="reply"><a href="javascript:void(0)" data-commentID="' . $data['id'] . '" onclick="reply(this)">REPLY</a></div>';
+    $replyHTML = '<div class="reply"><a href="javascript:void(0)" data-commentID="' . $data['id'] . '" onclick="reply(this)">odpověď</a></div>';
     $data['comment'] = preg_replace('#<script(.*?)>(.*?)</script>#is', 'Jsem hnusnej hacker a chci hacknout tuto stránku.', $data['comment']);
     $response = '
             <div class="comment">
@@ -140,7 +140,7 @@ $numComments = $sqlNumComments->num_rows;
     <div class="container" style="margin-top:50px;">
         <div class="row">
             <div class="col-md-12">
-                <textarea class="form-control" id="mainComment" placeholder="Add Public Comment" cols="30" rows="2"></textarea><br>
+                <textarea class="form-control" id="mainComment" placeholder="přidej komentář" cols="30" rows="2"></textarea><br>
                 <?php 
                 if ($User){
                     echo('<button style="float:right" class="btn-primary btn" onclick="isReply = false;" id="addComment">Přidej komentář</button>');
@@ -164,9 +164,9 @@ $numComments = $sqlNumComments->num_rows;
 
     <div class="row replyRow" style="display:none">
         <div class="col-md-12">
-            <textarea class="form-control" id="replyComment" placeholder="Add Public Comment" cols="30" rows="2"></textarea><br>
-            <button style="float:right" class="btn-primary btn" onclick="isReply = true;" id="addReply">Add Reply</button>
-            <button style="float:right" class="btn-default btn" onclick="$('.replyRow').hide();">Close</button>
+            <textarea class="form-control" id="replyComment" placeholder="přidej komentář" cols="30" rows="2"></textarea><br>
+            <button style="float:right" class="btn-primary btn" onclick="isReply = true;" id="addReply">přidej odpověď</button>
+            <button style="float:right" class="btn-default btn" onclick="$('.replyRow').hide();">zavři</button>
         </div>
     </div>
 

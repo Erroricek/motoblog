@@ -93,7 +93,7 @@ if ($User && $User->isAdmin()) {
                             <a class="btn btn-info d-block w-auto py-2 my-2" href="index.php?page=edit_profile">Účet</a>
                             <hr>
                             <form class="d-block w-auto" action="index.php?page=login" method="post">
-                                <button name="logout" type="submit" class="btn btn-danger d-block w-80 m-auto">Odhlasit</button>
+                                <button name="logout" type="submit" class="btn btn-danger d-block w-80 m-auto">Odhlásit</button>
                             </form>
 
                         <?php 

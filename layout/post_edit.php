@@ -77,7 +77,7 @@ if($User->isAdmin()){
         if(file_exists($whereTheFileIs)){
             unlink($whereTheFileIs);
             //echo("Soubor " . $currentFileName . " Byl úspěšně smazán.");
-            echo ('<div class="alert alert-success">' . $currentFileName . "</div>");
+            echo ('<div class="alert alert-success">' . "Smazal jsi: " . $currentFileName . "</div>");
             //$_SESSION["success"][] = "Soubor " . $currentFileName . " byl úspěšně smazán.";
         }else {
             display_errors(["Soubor, který chceš právě smazat jsem nenašel. Soubor:  " . $whereTheFileIs]);

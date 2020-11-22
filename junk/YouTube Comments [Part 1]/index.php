@@ -167,8 +167,8 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <textarea class="form-control" id="mainComment" placeholder="Add Public Comment" cols="30" rows="2"></textarea><br>
-                <button style="float:right" class="btn-primary btn" id="addComment">Add Comment</button>
+                <textarea class="form-control" id="mainComment" placeholder="přidej komentář" cols="30" rows="2"></textarea><br>
+                <button style="float:right" class="btn-primary btn" id="addComment">přidej komment</button>
             </div>
         </div>
         <div class="row">

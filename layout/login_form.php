@@ -10,7 +10,7 @@ $style = isset($outline) ? "-outline" : "";
 
         <div class="form-group">
             <label for="exampleFormControlInput1">Heslo</label>
-            <input name="password" type="password" class="form-control" id="exampleFormControlInput1" placeholder="password">
+            <input name="password" type="password" class="form-control" id="exampleFormControlInput1" placeholder="heslo">
         </div>
         
         <div class="text-center">

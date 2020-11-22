@@ -1,3 +1,8 @@
+
+
+
+
+
 <div class="py-3 content-block">
 <?php
 
@@ -99,9 +104,37 @@ if($post!=NULL){
     echo "clanek neexistuje";
 }
 
-
-
-
-
 ?>
 </div>
+
+<script type="text/javascript">Loader.load();</script>
+<script type="text/javascript" src="https://api.mapy.cz/loader.js"></script>
+<script>
+window.onload = function () {
+    let center = SMap.Coords.fromWGS84(16.5601071373795, 48.81331908940705);
+    let m = new SMap(JAK.gel("m"), center, 13);
+    m.addDefaultLayer(SMap.DEF_BASE).enable();
+    m.addDefaultControls();
+    
+    let layer = new SMap.Layer.Geometry();
+    m.addLayer(layer);
+    layer.enable();
+    
+    let options = {
+        color: "#f00",
+        width: 3
+    };
+    xml.json
+    fetch('xml.json')
+        .then((res) => res.json())
+        .then((data) => {
+            let points = [];
+            for(let i = 0; i < data.length; i++) {
+                points.push(SMap.Coords.fromWGS84(data[i].lon, data[i].lat));
+            }
+            /* console.log(points); */
+            let polyline = new SMap.Geometry(SMap.GEOMETRY_POLYLINE, null, points, options);
+            layer.addGeometry(polyline);
+        });   
+}
+</script>

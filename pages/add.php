@@ -1,4 +1,64 @@
 <?php
+
+function ExplodeRawDataToJSONArray($xmlFileInput, $targetFilePath){
+    $xmldata = simplexml_load_file($xmlFileInput) or die("Failed to load"); // 1) načíst xml soubor a rozebrat ho (parsovat)
+    // $name = $xmldata->trk->name;
+    $name = "xml";
+    $data = $xmldata->trk->trkseg->trkpt;
+    for ($i = 0; $i < count($data); $i++) {                 // toto udela s kazdym zaznamem
+        $zaznam = $data[$i];
+        $atributy = $zaznam->attributes();                          //lon lat
+        
+        $lon = floatval($zaznam->attributes()["lon"]);              // šíška
+        $lat = floatval($zaznam->attributes()["lat"]);              // delka
+        $ele = floatval($zaznam->ele);                              // výška
+        $time = new DateTime( trim($zaznam->time->__toString()) );  //den/čas
+        $time = $time->format("d. m. Y - H:i:s");
+        $speed = floatval($zaznam->extensions->speed);              //rychlost
+        $length = floatval($zaznam->extensions->length);            //vzdálenost
+        //$a[] = ['lon'=>$lon."", 'lat'=>$lat."", 'ele'=>$ele."", 'time'=>$time."", 'speed'=>$speed."", 'length'=>$length.""];
+        $a[] = ['lon'=>$lon, 'lat'=>$lat, 'ele'=>$ele, 'time'=>$time, 'speed'=>$speed, 'length'=>$length];
+    } 
+    $center_point = $data[(int)round(count($data) / 2)];
+    $center_atributy = $center_point->attributes();
+    $Clon = $center_atributy["lon"]; // šíška
+    $Clat = $center_atributy["lat"]; // delka
+    zpracovavacDoJson($a, $name, $targetFilePath);
+    
+}
+function zpracovavacDoJson($array, $targetFilePath)                       //převede PHP array do JSON
+{
+    file_put_contents($targetFilePath, json_encode($array));
+}
+
+
+function addToExistXml($array)         //todo
+{
+    json_decode($array);
+    $array[] = "new data";
+    zpracovavacDoJson($array, $targetFilePath);
+}
+
+// function putArrayToTextFile($array, $name)                             //veme surový ouput z GPSTracker a vypíše jednotlivý bod do souboru
+// {
+//     $file = fopen("$name.txt", "w");
+//     foreach ($array as $bod) {
+//         fwrite($file, "SMap.Coords.fromWGS84(" . $bod['lon'] .", " . $bod['lat'] .")");
+//         if($bod !== count($array)-1){
+//             fwrite($file, ",");
+//         }
+//         fwrite($file, "\n");
+//     }
+//     fclose($file);
+// }
+
+
+
+
+
+
+
+
 if($User){
     if($User && $User->isAdmin() ){
         if(isset($_POST['addPage'])){
@@ -54,22 +114,20 @@ if($User){
             }
 
             //xml input
-            $allowTypes = array('xml');
-
+            $allowTypes = array('xml','gpx','json');
             foreach($_FILES['xml_files']['name'] as $key => $val){
                 // File upload path
-                $fileName = "Cesta.xml";
+                $fileName = "xml.json";
                 $targetFilePath = $target . $postid . "/" . $fileName;
                 
                 // Check whether file type is valid
                 $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
                 if(in_array($fileType, $allowTypes))
                 {
-                    // Upload file to server
-                    if(move_uploaded_file($_FILES["xml_files"]["tmp_name"][$key], $targetFilePath)){
-                        Log::add("xml ulozen: " . $targetFilePath);
+                    if(ExplodeRawDataToJSONArray($_FILES["xml_files"]["tmp_name"][$key], $targetFilePath)){
+                        Log::add("json ulozen: " . $targetFilePath);
                     }else{
-                        Log::add("xml neulozen" . $targetFilePath);
+                        Log::add("json neulozen" . $targetFilePath);
                     }
                 }else{
                     echo("xml nepodporuju");
